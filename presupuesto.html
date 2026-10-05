@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solicitar presupuesto de soldadura inoxidable | INOX ESTAY</title>
+<meta name="description" content="Pide presupuesto para tu pasamanos, candelero, arco o herraje en inoxidable 316L en Valencia. Respuesta en menos de 24 horas.">
+<link rel="canonical" href="https://inoxestay.es/presupuesto.html">
+<meta name="theme-color" content="#0d151d">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+  :root { --bg:#f5f6f5; --surface:#fff; --ink:#14181a; --ink-soft:#565f63; --line:#d8dcda; --navy:#0d151d; --heat:#b5813e; --heat-ink:#fffaf2; --ring:rgba(181,129,62,.35); }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f1317; --surface:#171d22; --ink:#eef1f2; --ink-soft:#a7b0b4; --line:#293136; --heat:#dba05c; --heat-ink:#221607; } }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:Inter,system-ui,sans-serif; background:var(--bg); color:var(--ink); line-height:1.5; }
+  header { background:var(--navy); color:#eef1f2; padding:14px 20px; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+  header a { color:inherit; text-decoration:none; font-weight:700; letter-spacing:.04em; }
+  header .tel a { font-weight:600; letter-spacing:0; margin-left:14px; font-size:.95rem; }
+  main { max-width:620px; margin:0 auto; padding:32px 20px 64px; }
+  h1 { font-size:1.9rem; line-height:1.15; margin:0 0 8px; }
+  .lede { color:var(--ink-soft); margin:0 0 28px; }
+  .field { margin-bottom:18px; }
+  label.l { display:block; font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-soft); margin-bottom:6px; }
+  input[type=text], input[type=tel], select, textarea { width:100%; font:inherit; color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:13px 14px; }
+  textarea { min-height:130px; resize:vertical; }
+  input:focus, select:focus, textarea:focus { outline:none; border-color:var(--heat); box-shadow:0 0 0 3px var(--ring); }
+  .row { display:flex; gap:10px; flex-wrap:wrap; }
+  .pill { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--line); background:var(--surface); border-radius:999px; padding:10px 16px; cursor:pointer; font-weight:600; font-size:.95rem; }
+  .pill input { accent-color:var(--heat); }
+  .note { font-size:.85rem; color:var(--ink-soft); margin-top:6px; }
+  button { width:100%; font:inherit; font-weight:700; font-size:1.05rem; background:var(--heat); color:var(--heat-ink); border:0; border-radius:12px; padding:16px; cursor:pointer; margin-top:8px; }
+  button:hover { filter:brightness(1.06); }
+  .alt { margin-top:22px; text-align:center; color:var(--ink-soft); font-size:.92rem; }
+  .alt a { color:var(--heat); font-weight:600; }
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html">INOX ESTAY</a>
+  <span class="tel"><a href="tel:+34658928308">658 92 83 08</a><a href="tel:+34680663605">680 66 36 05</a></span>
+</header>
+<main>
+  <h1>Solicitar presupuesto</h1>
+  <p class="lede">Cuéntenos el trabajo. Al enviar se abre WhatsApp con su solicitud ya escrita; allí puede adjuntar fotos de la pieza. Respuesta con presupuesto en menos de 24 horas.</p>
+  <form id="f" novalidate>
+    <div class="field"><label class="l" for="nombre">Nombre</label><input type="text" id="nombre" autocomplete="name" required></div>
+    <div class="field"><label class="l" for="tel">Teléfono</label><input type="tel" id="tel" autocomplete="tel" inputmode="tel" required></div>
+    <div class="field">
+      <label class="pill" for="socio"><input type="checkbox" id="socio"> Socio del club</label>
+      <p class="note" id="socio-note" hidden>Trato exclusivo para socios.</p>
+    </div>
+    <div class="field"><label class="l" for="ub">Club, amarre o ubicación <span style="text-transform:none;font-weight:400">(opcional)</span></label><input type="text" id="ub" placeholder="Ej. Pantalán C, amarre 24" autocomplete="off"></div>
+    <div class="field"><label class="l" for="desc">¿Qué necesita soldar o reparar?</label><textarea id="desc" placeholder="Qué pieza es, qué ha pasado y dónde está. Cuanto más detalle, mejor presupuesto." required></textarea></div>
+    <div class="field">
+      <label class="l">Urgencia</label>
+      <div class="row">
+        <label class="pill"><input type="radio" name="u" value="Normal" checked> Normal</label>
+        <label class="pill"><input type="radio" name="u" value="Urgente"> Urgente</label>
+      </div>
+    </div>
+    <button type="submit">Enviar por WhatsApp</button>
+  </form>
+  <p class="alt">¿Prefiere llamar? <a href="tel:+34658928308">658 92 83 08</a> · <a href="tel:+34680663605">680 66 36 05</a></p>
+</main>
+<script>
+  var f=document.getElementById('f'), socio=document.getElementById('socio'), note=document.getElementById('socio-note');
+  socio.addEventListener('change',function(){ note.hidden=!socio.checked; });
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('nombre'), t=document.getElementById('tel'), d=document.getElementById('desc');
+    var bad=[n,t,d].filter(function(x){ return !x.value.trim(); });
+    if(bad.length){ bad[0].focus(); bad.forEach(function(x){ x.style.borderColor='#c0392b'; }); return; }
+    var ub=document.getElementById('ub').value.trim();
+    var u=f.querySelector('input[name=u]:checked').value;
+    var msg='Solicitud de presupuesto (inoxestay.es)\n'+
+      'Nombre: '+n.value.trim()+'\n'+
+      'Teléfono: '+t.value.trim()+'\n'+
+      (socio.checked?'Socio del club: sí\n':'')+
+      (ub?'Ubicación: '+ub+'\n':'')+
+      'Urgencia: '+u+'\n'+
+      'Trabajo: '+d.value.trim();
+    window.location.href='https://wa.me/34658928308?text='+encodeURIComponent(msg);
+  });
+</script>
+</body>
+</html>
