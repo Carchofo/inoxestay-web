@@ -49,6 +49,7 @@ document.addEventListener('click',function(e){{var a=e.target.closest&&e.target.
 '''
 import menu_servicios
 page=menu_servicios.apply(page)[0]
+page=page.replace('</main>','</main>\n<footer style="text-align:center;padding:0 20px 40px">INOX ESTAY · <a href="tel:+34658928308">658 92 83 08</a> · <a href=\"mailto:inoxestay@gmail.com\">inoxestay@gmail.com</a></footer>',1)
 open('trabajos.html','w',encoding='utf-8').write(page)
 sm=open('sitemap.xml').read(); sm=re.sub(r'\s*<url>\s*<loc>https://inoxestay.es/trabajos.html</loc>.*?</url>','',sm,flags=re.S)
 if index: sm=sm.replace('</urlset>','  <url>\n    <loc>https://inoxestay.es/trabajos.html</loc>\n    <priority>0.8</priority>\n  </url>\n</urlset>')

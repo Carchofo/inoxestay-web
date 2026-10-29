@@ -62,7 +62,7 @@ for p in P:
     url = f'https://inoxestay.es/{p["slug"]}.html'
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "Service", "name": p['crumb'], "description": p['desc'],
-         "provider": {"@type": "LocalBusiness", "name": "INOX ESTAY", "url": "https://inoxestay.es/", "telephone": TEL},
+         "provider": {"@type": "LocalBusiness", "name": "INOX ESTAY", "url": "https://inoxestay.es/", "telephone": TEL, "email": "inoxestay@gmail.com"},
          "areaServed": {"@type": "City", "name": "Valencia"}, "url": url},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://inoxestay.es/"},
@@ -93,7 +93,7 @@ for p in P:
 ''' + ''.join(f'  <details><summary>{q}</summary><p>{a}</p></details>\n' for q, a in p['faq']) + f'''  <h2>Otros trabajos</h2>
   {OTROS}
 </main>
-<footer>INOX ESTAY · Soldadura de inox y hierro en Valencia · <a href="tel:+34658928308">658 92 83 08</a></footer>
+<footer>INOX ESTAY · Soldadura de inox y metales en Valencia · <a href="tel:+34658928308">658 92 83 08</a> · <a href="mailto:inoxestay@gmail.com">inoxestay@gmail.com</a></footer>
 </body>
 </html>
 '''
