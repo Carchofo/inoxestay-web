@@ -34,6 +34,16 @@
   .alt { margin-top:22px; text-align:center; color:var(--ink-soft); font-size:.92rem; }
   .alt a { color:var(--heat); font-weight:600; }
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1002014984"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','AW-1002014984');
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href*="wa.me/"]');
+  if(a)gtag('event','conversion',{'send_to':'AW-1002014984/O__uCOXFgq4dEIiS5t0D','value':1.0,'currency':'EUR'});
+});
+</script>
 </head>
 <body>
 <header>
@@ -80,7 +90,10 @@
       (ub?'Ubicación: '+ub+'\n':'')+
       'Urgencia: '+u+'\n'+
       'Trabajo: '+d.value.trim();
-    window.location.href='https://wa.me/34658928308?text='+encodeURIComponent(msg);
+    var url='https://wa.me/34658928308?text='+encodeURIComponent(msg),ido=false;
+    var ir=function(){if(!ido){ido=true;window.location.href=url;}};
+    gtag('event','conversion',{'send_to':'AW-1002014984/CmnhCOLFgq4dEIiS5t0D','value':1.0,'currency':'EUR','event_callback':ir});
+    setTimeout(ir,1200);
   });
 </script>
 </body>

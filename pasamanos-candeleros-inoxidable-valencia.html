@@ -103,6 +103,16 @@
   ul.more { padding-left:20px; color:var(--ink-soft); } ul.more a { color:var(--heat); }
   footer { text-align:center; color:var(--ink-soft); font-size:.9rem; padding:0 20px 40px; } footer a { color:var(--heat); }
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1002014984"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','AW-1002014984');
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href*="wa.me/"]');
+  if(a)gtag('event','conversion',{'send_to':'AW-1002014984/O__uCOXFgq4dEIiS5t0D','value':1.0,'currency':'EUR'});
+});
+</script>
 </head>
 <body>
 <header><a href="index.html">INOX ESTAY</a><span class="tel"><a href="tel:+34658928308">658 92 83 08</a><a href="tel:+34680663605">680 66 36 05</a></span></header>
