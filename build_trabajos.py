@@ -47,6 +47,8 @@ document.addEventListener('click',function(e){{var a=e.target.closest&&e.target.
 <div class="grid">{"".join(cards)}</div>
 <a class="btn" href="presupuesto.html">Solicitar presupuesto</a></main></body></html>
 '''
+import menu_servicios
+page=menu_servicios.apply(page)[0]
 open('trabajos.html','w',encoding='utf-8').write(page)
 sm=open('sitemap.xml').read(); sm=re.sub(r'\s*<url>\s*<loc>https://inoxestay.es/trabajos.html</loc>.*?</url>','',sm,flags=re.S)
 if index: sm=sm.replace('</urlset>','  <url>\n    <loc>https://inoxestay.es/trabajos.html</loc>\n    <priority>0.8</priority>\n  </url>\n</urlset>')

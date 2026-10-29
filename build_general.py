@@ -1,5 +1,6 @@
 """Genera las páginas de servicios generales (no náuticos) a partir de la plantilla in situ."""
 import json, re
+import menu_servicios
 TPL = open('soldadura-inoxidable-in-situ-valencia.html', encoding='utf-8').read()
 HEAD_STYLE = TPL[TPL.index('<link rel="icon"'):TPL.index('</head>')]
 HEAD_STYLE = re.sub(r'<script type="application/ld\+json">.*?</script>\n', '', HEAD_STYLE, flags=re.S)
@@ -85,7 +86,7 @@ for p in P:
 <body>
 <header><a href="index.html">INOX ESTAY</a><span class="tel"><a href="tel:+34658928308">658 92 83 08</a><a href="tel:+34680663605">680 66 36 05</a></span></header>
 <main>
-  <div class="crumb"><a href="index.html">Inicio</a> › {p["crumb"]}</div>
+  <div class="crumb"><a href="index.html">Inicio</a> › <a href="index.html#otros-trabajos">Otros trabajos</a> › {p["crumb"]}</div>
   <h1>{p["title"]}</h1>
 ''' + ''.join(f'  <p>{t}</p>\n' for t in p['body']) + '''  <a class="btn" href="presupuesto.html">Solicitar presupuesto</a>
   <h2>Preguntas frecuentes</h2>
@@ -96,5 +97,6 @@ for p in P:
 </body>
 </html>
 '''
+    html = menu_servicios.apply(html)[0]
     open(f'{p["slug"]}.html', 'w', encoding='utf-8').write(html)
     print(p['slug'])
