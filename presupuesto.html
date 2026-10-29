@@ -57,7 +57,7 @@ document.addEventListener('click',function(e){
     <div class="field"><label class="l" for="nombre">Nombre</label><input type="text" id="nombre" autocomplete="name" required></div>
     <div class="field"><label class="l" for="tel">Teléfono</label><input type="tel" id="tel" autocomplete="tel" inputmode="tel" required></div>
     <div class="field">
-      <label class="pill" for="socio"><input type="checkbox" id="socio"> Socio del club</label>
+      <label class="pill" for="socio"><input type="checkbox" id="socio"> Socio del Real Club Náutico de Valencia (5 % de descuento)</label>
       <p class="note" id="socio-note" hidden>Trato exclusivo para socios.</p>
     </div>
     <div class="field"><label class="l" for="ub">Club, amarre o ubicación <span style="text-transform:none;font-weight:400">(opcional)</span></label><input type="text" id="ub" placeholder="Ej. Pantalán C, amarre 24" autocomplete="off"></div>
@@ -86,7 +86,7 @@ document.addEventListener('click',function(e){
     var msg='Solicitud de presupuesto (inoxestay.es)\n'+
       'Nombre: '+n.value.trim()+'\n'+
       'Teléfono: '+t.value.trim()+'\n'+
-      (socio.checked?'Socio del club: sí\n':'')+
+      (socio.checked?'Socio del RCN Valencia: sí (5 % dto.)\n':'')+
       (ub?'Ubicación: '+ub+'\n':'')+
       'Urgencia: '+u+'\n'+
       'Trabajo: '+d.value.trim();
