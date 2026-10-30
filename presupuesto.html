@@ -41,7 +41,7 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);
 gtag('js',new Date());gtag('config','AW-1002014984');
 document.addEventListener('click',function(e){
   var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href*="wa.me/"]');
-  if(a)gtag('event','conversion',{'send_to':'AW-1002014984/O__uCOXFgq4dEIiS5t0D','value':1.0,'currency':'EUR'});
+  if(a&&e.isTrusted&&performance.now()>2000&&!navigator.webdriver)gtag('event','conversion',{'send_to':'AW-1002014984/O__uCOXFgq4dEIiS5t0D','value':1.0,'currency':'EUR'});
 });
 </script>
 </head>
@@ -69,6 +69,7 @@ document.addEventListener('click',function(e){
         <label class="pill"><input type="radio" name="u" value="Urgente"> Urgente</label>
       </div>
     </div>
+<div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label>No rellenar<input type="text" id="web" name="web" tabindex="-1" autocomplete="off"></label></div>
     <button type="submit">Enviar por WhatsApp</button>
   </form>
   <p class="alt">¿Prefiere llamar? <a href="tel:+34658928308">658 92 83 08</a> · <a href="tel:+34680663605">680 66 36 05</a><br>¿O por correo? <a href="mailto:inoxestay@gmail.com">inoxestay@gmail.com</a></p>
@@ -76,8 +77,11 @@ document.addEventListener('click',function(e){
 <script>
   var f=document.getElementById('f'), socio=document.getElementById('socio'), note=document.getElementById('socio-note');
   socio.addEventListener('change',function(){ note.hidden=!socio.checked; });
+  var t0=Date.now(), humano=false;
+  ['pointerdown','keydown','touchstart'].forEach(function(ev){ document.addEventListener(ev,function(){ humano=true; },{once:true,passive:true}); });
   f.addEventListener('submit',function(e){
     e.preventDefault();
+    if(document.getElementById('web').value || Date.now()-t0<4000 || !humano){ return; } // bot: no envía ni cuenta conversión
     var n=document.getElementById('nombre'), t=document.getElementById('tel'), d=document.getElementById('desc');
     var bad=[n,t,d].filter(function(x){ return !x.value.trim(); });
     if(bad.length){ bad[0].focus(); bad.forEach(function(x){ x.style.borderColor='#c0392b'; }); return; }

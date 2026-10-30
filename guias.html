@@ -40,7 +40,7 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);
 gtag('js',new Date());gtag('config','AW-1002014984');
 document.addEventListener('click',function(e){
   var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href*="wa.me/"]');
-  if(a)gtag('event','conversion',{'send_to':'AW-1002014984/O__uCOXFgq4dEIiS5t0D','value':1.0,'currency':'EUR'});
+  if(a&&e.isTrusted&&performance.now()>2000&&!navigator.webdriver)gtag('event','conversion',{'send_to':'AW-1002014984/O__uCOXFgq4dEIiS5t0D','value':1.0,'currency':'EUR'});
 });
 </script>
 
