@@ -38,9 +38,9 @@ main{{max-width:1000px;margin:0 auto;padding:36px 20px 64px}}h1{{font-size:2rem;
 .job figcaption{{padding:16px}}.job h2{{font-size:1.05rem;margin:0 0 6px}}.job p{{color:var(--soft);margin:0 0 8px;font-size:.95rem}}.job span{{font-size:.8rem;color:var(--heat);font-weight:700}}
 .btn{{display:inline-block;background:var(--heat);color:var(--hi);font-weight:700;padding:14px 24px;border-radius:12px;text-decoration:none;margin-top:28px}}
 </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1002014984"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','AW-1002014984');
-document.addEventListener('click',function(e){{var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href*="wa.me/"]');if(a&&e.isTrusted&&performance.now()>2000&&!navigator.webdriver)gtag('event','conversion',{{'send_to':'AW-1002014984/O__uCOXFgq4dEIiS5t0D','value':1.0,'currency':'EUR'}});}});</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18544065185"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','AW-18544065185');
+document.addEventListener('click',function(e){{var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href*="wa.me/"]');if(a&&e.isTrusted&&performance.now()>2000&&!navigator.webdriver)gtag('event','conversion',{{'send_to':'AW-18544065185/v9SBCKGn7K4dEKH1v4pF','value':1.0,'currency':'EUR'}});}});</script>
 </head><body>
 <header><a href="index.html">INOX ESTAY</a><span class="tel"><a href="tel:+34658928308">658 92 83 08</a><a href="tel:+34680663605">680 66 36 05</a></span></header>
 <main><h1>Trabajos realizados</h1><p class="lede">Trabajos reales en embarcaciones de Valencia y alrededores.</p>
