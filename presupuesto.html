@@ -42,7 +42,7 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);
 gtag('js',new Date());gtag('config','AW-18544065185');
 document.addEventListener('click',function(e){
   var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href*="wa.me/"]');
-  if(a&&e.isTrusted&&performance.now()>2000&&!navigator.webdriver)gtag('event','conversion',{'send_to':'AW-18544065185/v9SBCKGn7K4dEKH1v4pF','value':1.0,'currency':'EUR'});
+  if(a&&e.isTrusted&&performance.now()>2000&&!navigator.webdriver)dataLayer.push({event:'contacto_humano'}),gtag('event','conversion',{'send_to':'AW-18544065185/v9SBCKGn7K4dEKH1v4pF','value':1.0,'currency':'EUR'});
 });
 </script>
 </head>
@@ -97,7 +97,7 @@ document.addEventListener('click',function(e){
       'Trabajo: '+d.value.trim();
     var url='https://wa.me/34658928308?text='+encodeURIComponent(msg),ido=false;
     var ir=function(){if(!ido){ido=true;window.location.href=url;}};
-    gtag('event','conversion',{'send_to':'AW-18544065185/wZ3FCJ6n7K4dEKH1v4pF','value':1.0,'currency':'EUR','event_callback':ir});
+    dataLayer.push({event:'presupuesto_enviado'});gtag('event','conversion',{'send_to':'AW-18544065185/wZ3FCJ6n7K4dEKH1v4pF','value':1.0,'currency':'EUR','event_callback':ir});
     setTimeout(ir,1200);
   });
 </script>
