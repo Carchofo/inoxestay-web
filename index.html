@@ -1,3 +1,6 @@
+<!doctype html>
+<html lang="es">
+<head>
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-WRMC7PL2"></script>
 <meta charset="UTF-8">
 <script>
@@ -35,8 +38,7 @@ document.addEventListener('click',function(e){
    ],
    "@id": "https://inoxestay.es/#negocio",
    "name": "INOX ESTAY",
-   "alternateName": "Inox Estay Soldadura Náutica",
-   "description": "Soldadura de acero inoxidable náutico en Valencia, trabajos in situ y desplazamiento a pie de amarre. Acabados de calidad en 316L y cumplimiento de plazos.",
+      "description": "Soldadura de acero inoxidable y todo tipo de metales en Valencia y Castellón: barcos, barandillas, rejas, puertas, mesas y fregaderos de inox y reparaciones a domicilio. Trabajos in situ y cumplimiento de plazos.",
    "url": "https://inoxestay.es/",
    "image": "https://inoxestay.es/img/tig-tubo.jpg",
    "logo": "https://inoxestay.es/img/favicon.png",
@@ -171,7 +173,7 @@ document.addEventListener('click',function(e){
      "name": "¿En qué zona trabajáis?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "En Valencia y alrededores, con base en un club náutico. Llámenos o escriba por WhatsApp y confirmamos si llegamos a su amarre."
+      "text": "En Valencia y Castellón, con base en un club náutico. Vamos a amarres, casas, locales y naves. Llámenos o escriba por WhatsApp y lo confirmamos."
      }
     },
     {
@@ -187,7 +189,7 @@ document.addEventListener('click',function(e){
      "name": "¿Os desplazáis hasta el barco?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Sí, hacemos trabajos in situ: a pie de amarre, en el club o en seco, en Valencia y alrededores. Confirmamos por teléfono o WhatsApp si llegamos a su amarre."
+      "text": "Sí, hacemos trabajos in situ: a pie de amarre, en el club o en seco, en Valencia y Castellón. Confirmamos por teléfono o WhatsApp si llegamos a su amarre."
      }
     }
    ]
@@ -196,9 +198,11 @@ document.addEventListener('click',function(e){
 }
 </script>
 <link rel="icon" type="image/png" href="img/favicon.png">
-<link rel="preload" as="image" href="img/tig-tubo.jpg" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<link rel="preload" as="image" href="img/hero-800.webp" media="(max-width: 800px)" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero-1400.webp" media="(min-width: 801px)" fetchpriority="high">
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/inter-latin.woff2) format("woff2")}</style>
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
 <style>
   :root {
@@ -211,7 +215,7 @@ document.addEventListener('click',function(e){
     --line: #d8dcda;
     --steel: #3d4750;
     --navy: #0d151d;
-    --heat: #b5813e;
+    --heat: #966628;
     --heat-ink: #fffaf2;
     --heat-ring: rgba(181, 129, 62, 0.35);
     --shadow: 0 1px 2px rgba(20, 24, 26, 0.05), 0 10px 28px -16px rgba(20, 24, 26, 0.18);
@@ -273,19 +277,27 @@ document.addEventListener('click',function(e){
   header.top .bar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; row-gap: 8px; padding: 16px 24px; }
   .brand { display: flex; align-items: center; gap: 16px; }
   .brand img {
-    width: 46px; height: 46px; display: block; object-fit: cover; object-position: 50% 45%;
-    border-radius: 12px; border: 1px solid var(--line); background: var(--surface);
+    width: 46px; height: 46px; display: block; object-fit: contain; padding: 3px;
+    border-radius: 12px; border: 1px solid var(--line); background: #fff;
   }
   .wordmark { font-weight: 800; font-size: 21px; letter-spacing: 0.06em; }
   .wordmark .descriptor {
     display: block; font-weight: 500; font-size: 10.5px; letter-spacing: 0.08em;
-    color: var(--ink-faint); text-transform: none; margin-top: 2px;
+    color: var(--ink-soft); text-transform: none; margin-top: 2px;
   }
   header.top .btn { padding: 10px 18px; font-size: 14px; background: var(--heat); color: var(--heat-ink); }
   .header-phones { display: flex; gap: 16px; font-size: 13px; font-weight: 600; }
   .header-phones a { color: var(--ink); text-decoration: none; }
   .header-phones a:hover { color: var(--heat); }
   @media (max-width: 1024px) { .header-phones { display: none; } }
+  @media (max-width: 600px) {
+    header.top .bar { padding: 10px 16px; flex-wrap: nowrap; }
+    .brand { gap: 10px; }
+    .brand img { width: 38px; height: 38px; }
+    .wordmark { font-size: 18px; }
+    .wordmark .descriptor { display: none; }
+    header.top .bar > .btn { display: none; }
+  }
 
   /* hero */
   .hero {
@@ -296,11 +308,16 @@ document.addEventListener('click',function(e){
     position: absolute; inset: 0; z-index: 0;
     background-image:
       linear-gradient(180deg, rgba(6,10,14,0.55) 0%, rgba(6,10,14,0.35) 35%, rgba(6,10,14,0.92) 100%),
-      url('img/tig-tubo.jpg');
+      url('img/hero-1400.webp');
     background-size: cover; background-position: 55% 55%;
   }
-  .hero-content { position: relative; z-index: 1; padding: 64px 0 60px; color: #fff; width: 100%; }
-  .hero-content .eyebrow { color: var(--heat); }
+  @media (max-width: 800px) {
+    .hero-bg { background-image:
+      linear-gradient(180deg, rgba(6,10,14,0.55) 0%, rgba(6,10,14,0.35) 35%, rgba(6,10,14,0.92) 100%),
+      url('img/hero-800.webp'); }
+  }
+  .hero-content { position: relative; z-index: 1; padding-top: 64px; padding-bottom: 60px; color: #fff; width: 100%; }
+  .hero-content .eyebrow { color: #dba05c; }
   .hero h1 {
     font-size: clamp(36px, 5.6vw, 60px); line-height: 1.04; color: #fff; max-width: 16ch;
   }
@@ -314,8 +331,10 @@ document.addEventListener('click',function(e){
   .hero-meta .dot-sep { width: 4px; height: 4px; border-radius: 50%; background: var(--heat); }
   @media (max-width: 600px) {
     .hero { min-height: 70vh; }
-    .hero .container { padding: 0 32px; }
-    .hero-content { padding: 40px 0 36px; text-align: center; }
+    .hero .container { padding-left: 24px; padding-right: 24px; }
+    .hero-content { padding-top: 40px; padding-bottom: 36px; text-align: center; }
+    .hero-meta { gap: 8px 18px; }
+    .hero-meta .dot-sep { display: none; }
     .hero-actions { justify-content: center; }
     .hero-meta { justify-content: center; }
     .hero .lede { margin-left: auto; margin-right: auto; }
@@ -367,7 +386,7 @@ document.addEventListener('click',function(e){
   /* galeria */
   .gallery-band { background: var(--navy); }
   .gallery-band .sec-head h2, .gallery-band .eyebrow-light { color: #fff; }
-  .gallery-band .eyebrow { color: var(--heat); }
+  .gallery-band .eyebrow { color: #dba05c; }
   .gallery-band .lede { color: rgba(255,255,255,0.65); }
   .mosaic {
     display: grid; grid-template-columns: repeat(3, 1fr);
@@ -450,7 +469,7 @@ document.addEventListener('click',function(e){
 
   footer.foot { border-top: 1px solid var(--line); margin-top: 80px; padding: 40px 0; }
   .foot-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px; font-size: 13.5px; color: var(--ink-faint); }
-  .foot-grid a { text-decoration: none; }
+  .foot-grid a { text-decoration: none; display: inline-block; padding: 6px 0; }
   .foot-grid a:hover { color: var(--ink); }
 
   .faq { max-width: 820px; margin: 0 auto; }
@@ -468,10 +487,13 @@ document.addEventListener('click',function(e){
 
 
 <style id="svc-menu-css">.svc-menu{position:relative;display:inline-block;margin:0 12px;border:0!important;padding:0!important}.svc-menu summary{display:inline-block;white-space:nowrap;line-height:1.4;color:inherit;cursor:pointer;list-style:none;font-weight:600;padding:4px 10px;border:1px solid currentColor;border-radius:6px;font-size:.9rem}.svc-menu summary::-webkit-details-marker{display:none}.svc-menu summary::after{content:" ▾"}.svc-menu-pop{position:absolute;z-index:50;top:calc(100% + 8px);left:0;min-width:240px;background:#fff;color:#14181a;border:1px solid #d8dcda;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.18);padding:8px 0;display:flex;flex-direction:column}.svc-menu-pop b{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#8b9296;padding:8px 16px 4px}.svc-menu-pop a{color:#14181a!important;text-decoration:none;padding:7px 16px;font-weight:500!important;margin:0!important;font-size:.92rem!important}.svc-menu-pop a:hover{background:#f5f6f5;color:#b5813e!important}@media(max-width:700px){.svc-menu{position:static;margin:0 6px}.svc-menu-pop{position:fixed;left:12px;right:12px;top:auto;min-width:0;max-height:70vh;overflow:auto}}</style>
+<style id="callbar-css">.callbar{display:none}@media (max-width:760px){.callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:#0d151d;box-shadow:0 -6px 20px rgba(0,0,0,.25)}.callbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;border-radius:10px;font:600 16px/1 Inter,system-ui,sans-serif;text-decoration:none;color:#fff}.callbar a:first-child{background:#966628}.callbar a:last-child{background:#1a7f45}body{padding-bottom:72px}}</style>
+</head>
+<body>
 <header class="top">
   <div class="bar">
     <div class="brand">
-      <img src="img/logo-tig.jpg" width="873" height="652" alt="INOX ESTAY, soldadura inoxidable náutica en Valencia">
+      <img src="img/logo.webp" width="46" height="46" alt="INOX ESTAY">
       <div class="wordmark">INOX ESTAY<span class="descriptor">Especialistas en inox · todo tipo de metales</span></div>
     </div>
     
@@ -598,7 +620,7 @@ document.addEventListener('click',function(e){
           <li><span class="dot"></span><div><strong>Aislamiento galvánico</strong><span>Cuando el inoxidable toca aluminio (arcos sobre casco, soportes sobre estructura), se aísla con tefzel o nylon para no acelerar la corrosión de ninguno de los dos metales.</span></div></li>
         </ul>
       </div>
-      <div class="mat-photo"><img src="img/tornillos.jpg" width="1100" height="628" loading="lazy" decoding="async" alt="Herrajes y piezas náuticas sobre un banco de trabajo, con embarcaciones al fondo"></div>
+      <div class="mat-photo"><img src="img/tornillos.webp" width="1100" height="628" loading="lazy" decoding="async" alt="Herrajes y piezas náuticas sobre un banco de trabajo, con embarcaciones al fondo"></div>
     </div>
   </div>
 </section>
@@ -642,11 +664,11 @@ document.addEventListener('click',function(e){
       <p class="lede">Embarcaciones de crucero, de regata y de fin de semana comparten el mismo problema: el salitre no perdona un mal acabado.</p>
     </div>
     <div class="mosaic">
-      <figure class="m1"><img src="img/velero-negro.jpg" width="1400" height="1050" loading="lazy" decoding="async" alt="Velero de crucero navegando" style="object-position: center 35%;"></figure>
-      <figure class="m2"><img src="img/marina.jpeg" width="548" height="364" loading="lazy" decoding="async" alt="Club náutico con embarcaciones amarradas"></figure>
+      <figure class="m1"><img src="img/velero-negro.webp" width="1100" height="825" loading="lazy" decoding="async" alt="Velero de crucero navegando" style="object-position: center 35%;"></figure>
+      <figure class="m2"><img src="img/marina.webp" width="1100" height="730" loading="lazy" decoding="async" alt="Club náutico con embarcaciones amarradas"></figure>
       <figure class="m3"><img src="img/soldador-casco.webp" width="600" height="900" loading="lazy" decoding="async" alt="Soldadura bajo el casco de una embarcación"></figure>
-      <figure class="m4"><img src="img/velero-escora.jpg" width="360" height="240" loading="lazy" decoding="async" alt="Velero de regata navegando escorado"></figure>
-      <figure class="m5"><img src="img/soldador-obra.jpg" width="1600" height="800" loading="lazy" decoding="async" alt="Soldadura de estructura metálica"></figure>
+      <figure class="m4"><img src="img/velero-escora.webp" width="900" height="600" loading="lazy" decoding="async" alt="Velero de regata navegando escorado"></figure>
+      <figure class="m5"><img src="img/soldador-obra.webp" width="760" height="380" loading="lazy" decoding="async" alt="Soldadura de estructura metálica"></figure>
     </div>
     <p class="mosaic-caption">Imágenes de referencia del oficio y del entorno de trabajo, no de proyectos concretos.</p>
   </div>
@@ -670,7 +692,7 @@ document.addEventListener('click',function(e){
     <div class="trust">
       <div class="trust-item">
         <svg class="icon" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 3 L22 7 V13 C22 18 18 22 13 23 C8 22 4 18 4 13 V7 Z"/><path d="M9 13 L12 16 L18 9"/></svg>
-        <div><h3>Dirección técnica titulada</h3><p>Formación y experiencia acreditada — ver detalle en "Quién suelda" arriba.</p></div>
+        <div><h3>Homologaciones al día</h3><p>Soldadores con todas las homologaciones de soldadura al día.</p></div>
       </div>
       <div class="trust-item">
         <svg class="icon" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="6" width="18" height="14" rx="2"/><path d="M4 10 L22 10" /><path d="M8 15 L14 15"/></svg>
@@ -696,7 +718,7 @@ document.addEventListener('click',function(e){
     </div>
     <div class="coverage-grid">
       <div class="cov-photo">
-        <img src="img/marina.jpeg" width="548" height="364" loading="lazy" decoding="async" alt="Club náutico">
+        <img src="img/marina.webp" width="1100" height="730" loading="lazy" decoding="async" alt="Club náutico">
         <div class="cap">A pie de amarre, en el club</div>
       </div>
       <div class="cov-photo">
@@ -705,9 +727,8 @@ document.addEventListener('click',function(e){
       </div>
     </div>
     <div class="coverage-note">
-      Nuestro trabajo directo es el inoxidable náutico. Los trabajos en aluminio los
-      gestionamos a través de nuestra red de colaboradores especializados, con el mismo
-      interlocutor y el mismo control de calidad.
+      Soldamos acero inoxidable, aluminio, hierro y otros metales. Trabajamos a pie de amarre,
+      en seco, en su casa, local o nave, en Valencia y Castellón.
     </div>
   </div>
 </section>
@@ -725,8 +746,8 @@ document.addEventListener('click',function(e){
       <details><summary>¿Cuánto tarda el presupuesto?</summary><p>Respondemos con presupuesto en menos de 24 horas. El precio se entrega por escrito antes de empezar cualquier trabajo.</p></details>
       <details><summary>¿Qué piezas fabricáis o reparáis?</summary><p>Pasamanos, candeleros, púlpitos, arcos de popa, soportes de equipo, davits, soportes de motor fueraborda, herrajes a medida y recuperación de inoxidable con óxido o soldaduras abiertas.</p></details>
       <details><summary>¿Cumplís los plazos acordados?</summary><p>Sí. Acordamos la fecha de entrega antes de empezar y trabajamos para cumplirla. Si surge un imprevisto, se lo comunicamos cuanto antes.</p></details>
-      <details><summary>¿Os desplazáis hasta el barco?</summary><p>Sí, hacemos trabajos in situ: a pie de amarre, en el club o en seco, en Valencia y alrededores. Confirmamos por teléfono o WhatsApp si llegamos a su amarre.</p></details>
-      <details><summary>¿En qué zona trabajáis?</summary><p>En Valencia y alrededores, con base en un club náutico. Llámenos o escriba por WhatsApp y confirmamos si llegamos a su amarre.</p></details>
+      <details><summary>¿Os desplazáis hasta el barco?</summary><p>Sí, hacemos trabajos in situ: a pie de amarre, en el club o en seco, en Valencia y Castellón. Confirmamos por teléfono o WhatsApp si llegamos a su amarre.</p></details>
+      <details><summary>¿En qué zona trabajáis?</summary><p>En Valencia y Castellón, con base en un club náutico. Vamos a amarres, casas, locales y naves. Llámenos o escriba por WhatsApp y lo confirmamos.</p></details>
     </div>
   </div>
 </section>
@@ -745,3 +766,6 @@ document.addEventListener('click',function(e){
     <div><a href="tel:+34658928308">Teléfono: 658 92 83 08</a><br><a href="tel:+34680663605">Teléfono: 680 66 36 05</a><br><a href="https://wa.me/34658928308" target="_blank" rel="noopener">WhatsApp: 658 92 83 08</a><br><a href="mailto:inoxestay@gmail.com">inoxestay@gmail.com</a></div>
   </div>
 </footer>
+<nav class="callbar" aria-label="Contacto rápido"><a href="tel:+34658928308"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Llamar</a><a href="https://wa.me/34658928308" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg>WhatsApp</a></nav>
+</body>
+</html>

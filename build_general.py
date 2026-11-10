@@ -1,4 +1,7 @@
-"""Genera las páginas de servicios generales (no náuticos) a partir de la plantilla in situ."""
+"""Genera las páginas de servicios generales (no náuticos) a partir de la plantilla in situ.
+
+NO EJECUTAR sin actualizar antes: desde 2026-11-10 el HTML es la fuente de verdad (GTM, eventos
+dataLayer, fuente local, cabecera con logo, barra Llamar/WhatsApp). Regenerar borraría todo eso."""
 import json, re
 import menu_servicios
 TPL = open('soldadura-inoxidable-in-situ-valencia.html', encoding='utf-8').read()
