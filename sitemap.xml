@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://inoxestay.es/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -99,6 +99,21 @@
   <url>
     <loc>https://inoxestay.es/soldador-domicilio-valencia.html</loc>
     <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inoxestay.es/nautica-inoxidable-valencia.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inoxestay.es/cerramientos-terraza-ventanales-valencia.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inoxestay.es/escaleras-peldanos-metalicos-valencia.html</loc>
+    <lastmod>2026-11-24</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>
